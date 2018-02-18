@@ -1,6 +1,6 @@
 # Install OpenMPI
 
-installation
+## installation
 ```
 wget https://www.open-mpi.org/software/ompi/v3.0/downloads/openmpi-3.0.0.tar.gz
 tar -xvf openmpi-*
@@ -10,7 +10,7 @@ make
 sudo make install
 ```
 
-Set PATH  
+## Set PATH  
 ไปแก้ที่ /etc/bashrc ให้เป็น global
 ```
 export PATH="$PATH:/usr/local/share/.openmpi/bin"
