@@ -1,30 +1,47 @@
-# CENTOS
+# CENTOS 7
 ## INSTALLATION  
 
-Setting by USB Storage (Centos 7)
+เสียบ USB หากไฟที่หน้าเครื่อง (สีเหลือง) ไม่กระพริ๊บแสดงว่าทำงานอยู่ ให้ กด reboot
+ทางตรง - กดที่ปุ่มหน้าเครื่อง
+ทางอ้อม - ให้ใส่ cmd ว่า reboot แต่กรณีนี้ต้องทราบรหัส root ไม่งั้นทำไม่ได้ 
 
-Set ประเทศ
+เข้าหน้า GUI ของ centos ที่เป็นหน้าขาวๆฟ้าๆ ก่อนเข้าหน้า boot ของระบบ
+	ให้กด F12 เพื่อเข้าหน้า setting
 
-Set network
-* กรณีแรก m1
-	* f0
+หน้า Setting --> Boot ด้วย??
+ให้เลือกตามนี้
+	Setting by USB Storage (Centos 7) --> Enter
+	
+เข้าหน้า GUI สำหรับ Install OS Centos 7
+สิ่งที่ต้อง Set มีดังนี้
+1.Set ประเทศ
+	click เลือกประเทศไทย --> Done ที่ซ้ายบน
+
+2.Set network
+	* กรณีแรก m1
+		* f0
+	      ```
+	      IP: 192.168.50.1
+	      Subnet:
+	      ```
+	    * f1
+	      ```
+	      IP: 158.108.32.160
+	      Subnet:
+	      Gateway: 158.108.32.129
+	      DNS 158.108.0.2, 158.108.0.3
       ```
-      IP: 192.168.50.1
-      ```
-    * f1
-      ```
-      IP: 158.108.32.160
-      Gateway: 158.108.32.129
-      DNS 158.108.0.2, 158.108.32.3
-      ```
-* กรณี 2 m2,m3,m4
-  * f1
-    ```
-    IP 192.168.50.*
-    Gateway: 192.168.50.1
-    ```
+	* กรณี 2 m2,m3,m4
+	  * f1
+	    ```
+	    IP 192.168.50.*
+	    Subnet:
+	    Gateway: 192.168.50.1
+	    DNS 158.108.0.2, 158.108.0.3
+	    ```
+	select enable network after install ด้วย
   
-Set disk
+3.Set disk
 	Reclaim อันที่เคยใช้ - เอา free space เพิ่ม
 	เลือกอันเดิม แต่ click ที่ i will configure partitioning
 Disable KDUMP
@@ -58,6 +75,7 @@ ping ku.ac.th
 ```
 
 ### Basic library installation
+ตามลำดับนะเพราะว่า net-tools ต้อง install หลัง epel-release ทดสอบโดยใช้ ipconfig
 ```
 yum install wget
 yum install epel-release
@@ -85,6 +103,7 @@ ssh-copy-id -i .ssh/id_rsa.pub your__host__name
 ### กรณี ssh เข้า m1 ไม่ได้
 เอาอันที่เป็น 158.108.32.160 ออก เพราะมันยังลิ้งกับอันเก่าอยู่  
 ไปแก้ที่ 
+(ในเครื่องเราเองนะ คือเข้าไปแก้ไฟล์ลบอันที่เกี่ยวข้องกับ IP นี้ออกให้หมด)
 ```
 .ssh/known_hosts
 ```
