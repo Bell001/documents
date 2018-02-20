@@ -19,11 +19,17 @@ echo export PATH="$PATH:/usr/local/share/.openmpi/bin" >> ~/.bashrc
 echo export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/share/.openmpi/lib/" >> ~/.bashrc
 echo export PATH="$PATH:/usr/local/share/.openmpi/bin" >> /etc/bashrc
 echo export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/share/.openmpi/lib/" >> /etc/bashrc
-
 ```
 
 *** ถ้าตอนแก้ไม่ได้ใส่ $PATH: จะทำให้ path พัง  
 วิธีแก้คือ
 ```
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH
+```
+
+## Select version Python (command อื่นๆต่าง version ก็ใช้ได้)
+```
+update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+update-alternatives --config python
+update-alternatives --remove python /usr/bin/python2.7
 ```
