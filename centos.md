@@ -82,6 +82,7 @@ yum install epel-release
 yum install vim bash-completion net-tools
 ifconfig
 yum install parted tmux screen
+yum group install "Development Tools"
 ```
 
 ### Create user
